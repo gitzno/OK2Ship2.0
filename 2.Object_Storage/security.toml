@@ -1,0 +1,29 @@
+# security.toml - Cấu hình bảo mật cho SeaweedFS (OK2Ship Project)
+
+# 1. Bảo mật tầng Master & Volume (JWT)
+# Key này sẽ được Docker ghi đè từ biến môi trường WEED_SECURITY_JWT_SIGNING_KEY
+[jwt.signing]
+key = "" 
+
+# 2. Bảo mật tầng Filer (Dùng để xác thực giữa các thành phần nội bộ)
+[jwt.filer_signing]
+key = ""
+
+# 3. Quản lý danh sách trắng (Whitelist)
+# Chỉ cho phép các IP trong dải mạng nội bộ của Docker hoặc localhost truy cập
+[access.whitelist]
+# Quyền Admin cho bảng điều khiển (Master/Filer UI)
+admin = ["127.0.0.1", "172.16.0.0/12", "192.168.0.0/16"]
+# Quyền đọc ghi dữ liệu
+read = ["127.0.0.1", "172.16.0.0/12", "192.168.0.0/16"]
+
+# 4. Cấu hình S3 (Dành cho Golang kết nối)
+[s3]
+# Cho phép bật tính năng xác thực S3
+enabled = true
+
+# 5. Mã hóa dữ liệu khi lưu trên đĩa (At-Rest Encryption)
+# Rất quan trọng khi bạn lưu trên NAS hoặc ổ cứng vật lý
+[encryption]
+# Bạn có thể bật nếu muốn bảo mật ảnh tuyệt đối tại nhà máy
+enabled = false

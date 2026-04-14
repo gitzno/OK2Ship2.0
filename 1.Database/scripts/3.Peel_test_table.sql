@@ -1,4 +1,11 @@
--- 1. Tạo bảng
+-- 3.Peel_test_table.sql
+USE [OK2SHIP_SMT];
+GO
+
+IF OBJECT_ID('[dbo].[PEEL_TEST_NAS]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[PEEL_TEST_NAS];
+GO
+
 CREATE TABLE [dbo].[PEEL_TEST_NAS](
     [ID] [INT] IDENTITY(1,1) NOT NULL,
     [ItemCode] [VARCHAR](50) NOT NULL, 
@@ -11,12 +18,11 @@ CREATE TABLE [dbo].[PEEL_TEST_NAS](
 
     CONSTRAINT [PK_PEEL_TEST_NAS] PRIMARY KEY CLUSTERED ([ID] ASC, [CreatedDate] ASC)
 ) ON [PS_Quarterly]([CreatedDate])
-WITH (DATA_COMPRESSION = PAGE); -- Nén bảng chính
+WITH (DATA_COMPRESSION = PAGE); -- Phải có dấu ; ở đây
 GO
 
--- 2. Tạo Index "Siêu nhẹ" (Không INCLUDE Data để tiết kiệm ổ cứng)
-CREATE NONCLUSTERED INDEX [IX_PEEL_TEST_NAS_Search] 
-ON [dbo].[PEEL_TEST_NAS] ([ItemCode], [LotNo], [Type])
+CREATE UNIQUE NONCLUSTERED INDEX [UX_PEEL_TEST_NAS_Identity] 
+ON [dbo].[PEEL_TEST_NAS] ([ItemCode], [LotNo], [Type], [CreatedDate])
 ON [PS_Quarterly]([CreatedDate])
-WITH (DATA_COMPRESSION = PAGE); -- Nén mục lục
+WITH (DATA_COMPRESSION = PAGE); -- Phải có dấu ; ở đây
 GO

@@ -1,3 +1,4 @@
+-- 0.Init_DB.sql
 USE [master];
 GO
 
@@ -7,7 +8,11 @@ BEGIN
 END
 GO
 
--- Tối ưu: Cho phép đọc dữ liệu khi đang ghi (tránh deadlock)
+-- Đảm bảo không có kết nối nào khác đang chiếm giữ DB khi Alter
+ALTER DATABASE [OK2SHIP_SMT] SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+GO
 ALTER DATABASE [OK2SHIP_SMT] SET ALLOW_SNAPSHOT_ISOLATION ON;
 ALTER DATABASE [OK2SHIP_SMT] SET READ_COMMITTED_SNAPSHOT ON;
+GO
+ALTER DATABASE [OK2SHIP_SMT] SET MULTI_USER;
 GO

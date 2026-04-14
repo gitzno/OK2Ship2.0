@@ -1,4 +1,28 @@
-#Week 2:
+# Week 3:
+## Database
+Ưu điểm của kiến trúc chia mảnh của tôi
+```
+Action              | Normal                      | Kiến trúc mới
+--------------------------------------------------------------------------
+Tìm kiếm DATA mới   | Quét toàn bộ dữ liệu        | Tìm quý gần nhất
+--------------------------------------------------------------------------
+Dung lượng lưu trữ  | 100% Dung lượng thực tế     | Giảm ~60%
+--------------------------------------------------------------------------
+Tìm kiếm DATA cũ    | Quét toàn bộ dữ liệu        | Ổn định(Olog(n))
+--------------------------------------------------------------------------
+Xóa dữ liệu hết hạn | tìm kiếm và xóa             | tức thì (O(1))
+--------------------------------------------------------------------------
+```
+
+## Object storage & API Upload service
+Tôi đã phải chuyển từ MINIO sang SeaweedFS do lo ngại vấn đề pháp lý nếu phần mềm này được triển khai.
+Minio đã chuyển giấy phép.
+
+- Triển khai việc lưu trữ ví nóng => ví lạnh => Hết hạn
+- Triển khai API Upload với golang
+
+
+# Week 2:
 ## Database
 Như tuần trước tôi sẽ làm lần lượt hệ thông database của tôi, ở đây tôi khởi tạo tự động bằng DOCKER và code T-SQL:
  - tạo docker file cho pull mssql về và chạy entrypoint để tự động chạy các scrpit trong folder ./script 

@@ -1,6 +1,7 @@
 # Hệ thống phần mềm OK2SHIP_BACKEND
 
 ## Requirement
+
     - Docker
 
 ## Background
@@ -20,13 +21,13 @@ Trước đây chỉ tập chung vào giải quyết vấn đề trước mắt 
 
 Khởi tạo docker file
 ```
-docker compose up -d
+docker-compose up --build -d
 ```
 
 Gỡ docker compose
 
 ```
-docker compose down 
+docker-compose down -v
 ```
 
 ## Tính năng (Features):

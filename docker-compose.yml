@@ -1,4 +1,5 @@
 services:
+  # --- 1. DATABASE ---
   db:
     build: ./1.Database
     container_name: sql_server_ok2Ship2.0
@@ -8,4 +9,57 @@ services:
       - ACCEPT_EULA=Y
       - MSSQL_SA_PASSWORD=${MSSQL_PASSWORD}
       - MSSQL_PID=Express
+    volumes:
+      - ${FOLDER_PATH_SQL}/data:/var/opt/mssql/data
+      - ${FOLDER_PATH_SQL}/log:/var/opt/mssql/log
+    restart: always
+
+  # --- 2. OBJECT STORAGE: MASTER ---
+  master:
+    build: ./2.Object_Storage
+    container_name: sw_master
+    environment:
+      - WEED_SECURITY_JWT_SIGNING_KEY=${JWT_SECRET_KEY}
+    command: "master -ip=master"
+    restart: always
+
+  # --- 3. OBJECT STORAGE: VOLUMES ---
+  # VOLUME 1: Ví nóng (SSD)
+  volume_hot:
+    build: ./2.Object_Storage
+    container_name: sw_volume_hot
+    volumes:
+      - ${FOLDER_PATH_SSD}:/data
+    command: "volume -mserver=master:9333 -port=8080 -dir=/data -rack=hot -max=100"
+    depends_on:
+      - master
+    restart: always
+
+  # VOLUME 2: Ví lạnh (HDD/NAS)
+  volume_cold:
+    build: ./2.Object_Storage
+    container_name: sw_volume_cold
+    volumes:
+      - ${FOLDER_PATH_NAS}:/data
+    command: "volume -mserver=master:9333 -port=8081 -dir=/data -rack=cold -max=500"
+    depends_on:
+      - master
+    restart: always
+
+  # --- 4. OBJECT STORAGE: FILER ---
+  filer:
+    build: ./2.Object_Storage
+    container_name: sw_filer
+    ports:
+      - "8888:8888" # Web UI quản lý
+      - "8333:8333" # S3 API cho Golang
+    environment:
+      - WEED_SECURITY_JWT_FILER_SIGNING_KEY=${JWT_SECRET_KEY}
+      - WEED_S3_CONFIG_VIPS_0_ACCESSKEY=${S3_ACCESS_KEY}
+      - WEED_S3_CONFIG_VIPS_0_SECRETKEY=${S3_SECRET_KEY}
+    command: "filer -master=master:9333 -s3"
+    depends_on:
+      - master
+      - volume_hot
+      - volume_cold
     restart: always
