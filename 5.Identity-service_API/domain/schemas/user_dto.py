@@ -1,6 +1,7 @@
+import re
 from uuid import UUID
 
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 from domain.schemas.exceptions import AccountBannerError, AccountDeletedError
 
@@ -31,3 +32,18 @@ class LoginResponse(BaseModel):
                 raise AccountDeletedError()
 
         return False;
+
+class RegisterRequest(BaseModel):
+    Username: str
+    Password: str
+    EmployeeID: str
+
+
+    def validate_username(self) -> bool:
+        return re.match(r"^(?=.{3,20}$)(?![_-])(?!.*[_-]{2})[a-zA-Z0-9_-]+(?<![_-])$", self.Username)
+
+    def validate_password(self) -> bool:
+        return re.match(r"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_])[^\s]{8,32}$", self.Password)
+
+    def validate_account(self) -> bool:
+        return self.validate_username() and self.validate_password()

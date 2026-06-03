@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8c245fef-dcec-4a57-a584-91532b224ef6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/5.Ok2Ship2.0.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/5.Identity-service_API.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/interfaces/repositories/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../0.Documents/development_diary.md" beforeDir="false" afterPath="$PROJECT_DIR$/../0.Documents/development_diary.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/identity-service-api.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/pyProjectModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pyProjectModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/routes/v1/auth_routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/v1/auth_routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/database.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/interfaces/repositories/i_user_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/domain/interfaces/repositories/i_user_repository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/interfaces/services/i_auth_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/domain/interfaces/services/i_auth_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/schemas/exceptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/domain/schemas/exceptions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/schemas/user_dto.py" beforeDir="false" afterPath="$PROJECT_DIR$/domain/schemas/user_dto.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reponsitories/user_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/reponsitories/user_repository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/auth_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/auth_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uv.lock" beforeDir="false" afterPath="$PROJECT_DIR$/uv.lock" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.0034036920160263" />
+      <entry key="MS500" value="1.4578973795490142" />
+      <entry key="S2" value="2.3796278700421034" />
+      <entry key="S5" value="2.9935326265159903" />
+      <entry key="S10" value="3.588219241545702" />
+      <entry key="S30" value="4.378013979115725" />
+      <entry key="S60" value="4.6641529907721715" />
+      <entry key="M2" value="4.8252998950721295" />
+      <entry key="M5" value="4.928415410878859" />
+      <entry key="M10" value="4.963916828677688" />
+      <entry key="M15" value="4.975879400494098" />
+      <entry key="M30" value="4.98790699511629" />
+      <entry key="H1" value="4.99394529696672" />
+      <entry key="H2" value="4.996970595288769" />
+      <entry key="H4" value="4.998484783964384" />
+      <entry key="D1" value="4.999747392617229" />
+      <entry key="W1" value="4.999963911482605" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="1.0231648072098424E-69" />
+      <entry key="MS500" value="1.5921688347392752E-14" />
+      <entry key="S2" value="3.552198934655167E-4" />
+      <entry key="S5" value="0.04170603581801102" />
+      <entry key="S10" value="0.2042205567958598" />
+      <entry key="S30" value="0.5888886066005817" />
+      <entry key="S60" value="0.7673907782874263" />
+      <entry key="M2" value="0.876008435054952" />
+      <entry key="M5" value="0.9484257031048517" />
+      <entry key="M10" value="0.9738715023579095" />
+      <entry key="M15" value="0.9825042516477963" />
+      <entry key="M30" value="0.9912135247502407" />
+      <entry key="H1" value="0.9955970694765229" />
+      <entry key="H2" value="0.9977961061642421" />
+      <entry key="H4" value="0.9988974452686529" />
+      <entry key="D1" value="0.9998161564026473" />
+      <entry key="W1" value="0.9999737345594198" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="0.003481025454498429" />
+      <entry key="MS500" value="0.4962279441036707" />
+      <entry key="S2" value="1.7114990911613177" />
+      <entry key="S5" value="2.560300638765606" />
+      <entry key="S10" value="3.3976350415342345" />
+      <entry key="S30" value="4.74061586692866" />
+      <entry key="S60" value="5.29813575199548" />
+      <entry key="M2" value="5.6285599630983985" />
+      <entry key="M5" value="5.846145018068954" />
+      <entry key="M10" value="5.922160993411807" />
+      <entry key="M15" value="5.947902349903404" />
+      <entry key="M30" value="5.97384807323831" />
+      <entry key="H1" value="5.986898145722749" />
+      <entry key="H2" value="5.993442585643803" />
+      <entry key="H4" value="5.9967196692020615" />
+      <entry key="D1" value="5.999453052543324" />
+      <entry key="W1" value="5.9999218591207395" />
+    </decayedShown>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="3EcWg9loTHwx3e9G5u6Lp0tPTWQ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "FastAPI.AUTH.executor": "Debug",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.auth_routes.executor": "Run",
+    "Python.user_dto.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "main",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "E:/thuyht/5.Ok2Ship2.0/5.Identity-service_API",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="AUTH" type="Python.FastAPI">
+      <option name="additionalOptions" />
+      <option name="file" value="E:\thuyht\5.Ok2Ship2.0\5.Identity-service_API\main.py" />
+      <module name="5.Identity-service_API" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="$PROJECT_DIR$/.venv/Scripts/python.exe" />
+      <option name="SDK_NAME" value="uv (5.Identity-service_API)" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="DEBUG_JUST_MY_CODE" value="false" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="RUN_TOOL" value="" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-c59985aa861c-c2ffad84badb-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-261.24374.152" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8c245fef-dcec-4a57-a584-91532b224ef6" name="Changes" comment="" />
+      <created>1780478448045</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1780478448045</updated>
+      <workItem from="1780478449906" duration="680000" />
+      <workItem from="1780479139744" duration="3108000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/services/auth_service.py</url>
+          <line>63</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/reponsitories/user_repository.py</url>
+          <line>32</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/5_Identity_service_API$user_dto.coverage" NAME="user_dto Coverage Results" MODIFIED="1780478701142" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/domain/schemas" />
+    <SUITE FILE_PATH="coverage/5_Identity_service_API$AUTH.coverage" NAME="AUTH Coverage Results" MODIFIED="1780479669443" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/5_Identity_service_API$auth_routes.coverage" NAME="auth_routes Coverage Results" MODIFIED="1780478814186" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/api/routes/v1" />
+  </component>
+</project>

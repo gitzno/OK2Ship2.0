@@ -3,8 +3,9 @@ import bcrypt
 from domain.interfaces.repositories.i_user_repository import IUserRepository
 from domain.interfaces.services.i_auth_service import IAuthService
 from domain.interfaces.services.i_token_service import ITokenService
+from domain.models.generated_models import Users
 from domain.schemas.exceptions import AccountNotFoundError, PasswordIncorrectError
-from domain.schemas.user_dto import LoginResponse, LoginRequest
+from domain.schemas.user_dto import LoginRequest, RegisterRequest
 
 
 class AuthService(IAuthService):
@@ -56,4 +57,23 @@ class AuthService(IAuthService):
         token = self.tokenService.generate_access_token(token_payload)
 
         return token
+
+    async def register(self, request: RegisterRequest) -> Users:
+
+        # Validate data
+        if not request.validate_account():
+            raise AccountNotFoundError()
+
+        user = Users(
+            Username = request.Username,
+            PasswordHash = await self.__hash_password(request.Password),
+            EmployeeID = request.EmployeeID,
+            UserStatus = 2, #pending
+        )
+
+        user = await self.user_repo.create_user(user)
+
+        return user
+
+
 

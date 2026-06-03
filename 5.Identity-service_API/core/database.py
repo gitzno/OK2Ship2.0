@@ -1,6 +1,6 @@
 from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker, AsyncSession
 from sqlalchemy.orm import DeclarativeBase
-from core.config import settings # Chỉ cần import biến settings đã khởi tạo
+from core.config import settings
 
 # CHUẨN: Gọi từ instance (s viết thường)
 engine = create_async_engine(settings.DATA_TABLE_URL, echo=True, pool_pre_ping=True)

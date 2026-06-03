@@ -6,15 +6,25 @@ from dependency_injector.wiring import inject, Provide
 
 from domain.interfaces.services.i_auth_service import IAuthService
 from domain.schemas.exceptions import AccountNotFoundError, PasswordIncorrectError
-from domain.schemas.user_dto import LoginRequest, LoginResponse
+from domain.schemas.user_dto import LoginRequest, LoginResponse, RegisterRequest
 
 router = APIRouter()
+
+
+@router.post("/register", response_model=RegisterRequest, tags=["auth"])
+@inject
+async def register(request: RegisterRequest,
+                   auth_service: IAuthService = Depends(Provide[Container.auth_service])):
+    try:
+        token = await auth_service.register(request)
+        return token
+    except Exception as e:
+        raise e
 
 @router.post("/login", response_model=LoginResponse, tags=["auth"])
 @inject
 async def login(
         request: LoginRequest,
-        # Ép kiểu IAuthService, hệ thống DI sẽ tự động tìm AuthService thật bơm vào
         auth_service: IAuthService = Depends(Provide[Container.auth_service])
 ):
     try:

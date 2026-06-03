@@ -18,6 +18,7 @@ ERROR_MESSAGES = {
         "dev_message": "This account was banned",
         "user_message": "Tài khoản của bạn đã bị cấm!"
     },
+
     "ACCOUNT_DELETED": {
         "dev_message": "This account was deleted",
         "user_message": "Tài khoản của bạn không tồn tại!"
@@ -37,9 +38,20 @@ ERROR_MESSAGES = {
         "dev_message": "This session has expired",
         "user_message": "Phiên đăng nhập hết hạn xin hãy đăng nhập lại!"
     },
+
     "TOKEN_INVALID": {
-        "dev_message": "This token is invalid, Please confim again",
+        "dev_message": "This token is invalid, Please confirm again",
         "user_message": "Phiên đăng nhập hết hạn xin hãy đăng nhập lại!"
+    },
+
+    "USER_DUPLICATE": {
+        "dev_message": "This account is valid, Please confirm again",
+        "user_message": "Tài khoản này đã tồn tại"
+    },
+
+    "ACCOUNT_VALIDATION": {
+        "dev_message": "Account not match with validation",
+        "user_message": "Tài khoản mật khẩu không phù hợp."
     }
 }
 
@@ -68,3 +80,7 @@ class TokenExpiredError(DomainException):
 class TokenInvalidError(DomainException):
     def __init__(self, custom_message: str = None):
         super().__init__(error_code="TOKEN_INVALID", custom_message=custom_message)
+
+class DuplicateAccountError(DomainException):
+    def __init__(self, custom_message: str = None):
+        super().__init__(error_code="USER_DUPLICATE", custom_message=custom_message)
