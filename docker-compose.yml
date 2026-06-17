@@ -94,8 +94,21 @@ services:
         command: redis-server --save 60 1 --loglevel warning
         volumes:
             - redis_data:/data
-
+    # --- 7. RabbitMQ Service ---
+    rabbitmq:
+        image: rabbitmq:3-management
+        container_name: local-rabbitmq
+        restart: always
+        ports:
+            - "${RABBITMQ_PORT}:5672"   # Cổng kết nối cho code Golang
+            - "${RABBITMQ_PORT_ADMIN}:15672" # Cổng cho giao diện Web Admin
+        environment:
+            RABBITMQ_DEFAULT_USER: ${RABBITMQ_DEFAULT_USER}  # Tài khoản mặc định
+            RABBITMQ_DEFAULT_PASS: ${RABBITMQ_DEFAULT_PASS}  # Mật khẩu mặc định
+        volumes:
+            - rabbitmq_data:/var/lib/rabbitmq
 volumes:
   mssql_data_volume:
   mssql_log_volume:
   redis_data:
+  rabbitmq_data:

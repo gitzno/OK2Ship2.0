@@ -49,3 +49,12 @@ class IUserRepository(ABC):
         """
         pass
 
+    @abstractmethod
+    async def update_stamp(self,  user_id: UUID,stamp: UUID) -> bool:
+        """
+        Cập nhật stamp mới cho user
+        :param stamp: stamp
+        :param user_id: id của người dùng
+        :return:trạng thái của việc update
+        """
+        pass

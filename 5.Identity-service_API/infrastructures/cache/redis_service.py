@@ -1,15 +1,13 @@
 import json
 from typing import Optional, Any
 
-from redis import from_url
-from redis.asyncio import Redis
+from redis.asyncio import Redis, from_url
 
 from core.interfaces.cache_interface import ICacheService
 
 class RedisService(ICacheService):
     def __init__(self, redis_url: str):
         self.redis: Redis = from_url(redis_url, decode_responses=True)
-
 
 
     async def get(self, key: str) -> Optional[Any]:
@@ -48,3 +46,11 @@ class RedisService(ICacheService):
         except Exception as e:
             print(f"Lỗi khi xóa Redis Key '{key}': {e}")
             return False
+
+    async def close(self):
+        """Dọn dẹp và đóng kết nối Redis pool khi tắt ứng dụng"""
+        # Lưu ý: Tùy phiên bản thư viện redis, có thể dùng .close() hoặc .aclose()
+        if hasattr(self.redis, "aclose"):
+            await self.redis.aclose()
+        else:
+            await self.redis.close()

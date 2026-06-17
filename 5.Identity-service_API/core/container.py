@@ -14,7 +14,8 @@ class Container(containers.DeclarativeContainer):
 
 
     wiring_config = containers.WiringConfiguration(packages=[
-        "api.routes.v1"
+        "api.routes.v1",
+        "api.dependencies"
     ])
 
 

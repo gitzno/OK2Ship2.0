@@ -22,3 +22,7 @@ class ICacheService(ABC):
     async def delete(self, key: str) -> bool:
         """Xóa một Key khỏi Cache."""
         pass
+
+    @abstractmethod
+    async def close(self):
+        pass

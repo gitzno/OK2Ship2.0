@@ -10,7 +10,7 @@ from core.container import Container
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    container = Container()
+    container = app.container
 
     try:
         await container.auth_service().initADMIN()

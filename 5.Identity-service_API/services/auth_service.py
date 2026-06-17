@@ -1,8 +1,13 @@
+import uuid
+from uuid import UUID
+
 import bcrypt
+from sqlalchemy import false, true
 from sqlalchemy.exc import IntegrityError
+from sqlalchemy.sql import cache_key
 
 from core.UnitOfWork import UnitOfWork
-from core.config import settings
+from core.config import settings, Settings
 from core.interfaces.cache_interface import ICacheService
 from domain.interfaces.services.i_auth_service import IAuthService
 from domain.interfaces.services.i_token_service import ITokenService
@@ -113,4 +118,23 @@ class AuthService(IAuthService):
         return ServiceResult(True ,user, "OK")
 
 
+    async def logout(self, userId : UUID) -> ServiceResult[bool]:
+        new_stamp = uuid.uuid4()
+        if(userId == None):
+            raise
+
+        async with self.uow:
+            try:
+                is_update = await self.uow.users.update_stamp(userId, new_stamp)
+            except Exception as e:
+                print(e)
+
+            if not is_update:
+                return ServiceResult(False)
+            await self.uow.commit()
+
+        cache_key_auth = Settings.KEY_CACHE_AUTH_USER.format(user_ID = str(userId))
+
+        await self.cache.set(cache_key_auth, str(new_stamp) , ttl=86400)
+        return ServiceResult(True)
 

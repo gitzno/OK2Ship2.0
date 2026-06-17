@@ -5,27 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8c245fef-dcec-4a57-a584-91532b224ef6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/core/providers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/domain/interfaces/repositories/i_unit_of_work.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infrastructures/connections.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../1.Database/scripts/3.Users.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../1.Database/scripts/3.Users.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/dependencies/auth_deps.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/dependencies/auth_deps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/middlewares/exception_middlewares.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/middlewares/exception_middlewares.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/routes/router_registration.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/router_registration.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/routes/v1/admin_routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/v1/admin_routes.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/routes/v1/auth_routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/v1/auth_routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/UnitOfWork.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/UnitOfWork.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/database.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/container.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/container.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/interfaces/cache_interface.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/interfaces/cache_interface.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/providers.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/domain/interfaces/repositories/i_user_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/domain/interfaces/repositories/i_user_repository.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/domain/interfaces/services/i_auth_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/domain/interfaces/services/i_auth_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/models/generated_models.py" beforeDir="false" afterPath="$PROJECT_DIR$/domain/models/generated_models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/schemas/exceptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/domain/schemas/exceptions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/schemas/service_result.py" beforeDir="false" afterPath="$PROJECT_DIR$/domain/schemas/service_result.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/infrastructures/cache/redis_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructures/cache/redis_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructures/connections.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/infrastructures/database/repositories/user_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructures/database/repositories/user_repository.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/auth_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/auth_service.py" afterDir="false" />
@@ -34,6 +25,9 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="54" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -45,63 +39,67 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.0" />
-      <entry key="S5" value="1.0" />
-      <entry key="S10" value="1.0" />
-      <entry key="S30" value="1.0000025891542295" />
-      <entry key="S60" value="1.0054023952975906" />
-      <entry key="M2" value="1.2659139804704862" />
-      <entry key="M5" value="4.760478654411534" />
-      <entry key="M10" value="13.797549210267093" />
-      <entry key="M15" value="23.075751283091375" />
-      <entry key="M30" value="54.753712669891556" />
-      <entry key="H1" value="122.94973818132253" />
-      <entry key="H2" value="233.15387978761802" />
-      <entry key="H4" value="423.9536524555871" />
-      <entry key="D1" value="1119.4477252009099" />
-      <entry key="W1" value="1416.876699086305" />
+      <entry key="MS100" value="1.0008386586900642" />
+      <entry key="MS500" value="1.3208479561876048" />
+      <entry key="S2" value="2.5901462712587087" />
+      <entry key="S5" value="3.3531541690840205" />
+      <entry key="S10" value="4.153001678447533" />
+      <entry key="S30" value="6.837859729162501" />
+      <entry key="S60" value="9.123294696289229" />
+      <entry key="M2" value="13.256079101396244" />
+      <entry key="M5" value="23.79498868788424" />
+      <entry key="M10" value="36.66026348098" />
+      <entry key="M15" value="44.89980717363057" />
+      <entry key="M30" value="61.2611342257049" />
+      <entry key="H1" value="100.83655532250589" />
+      <entry key="H2" value="213.28463465887978" />
+      <entry key="H4" value="443.5344271214138" />
+      <entry key="D1" value="1385.2326803940541" />
+      <entry key="W1" value="1844.4883345319292" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="0.0" />
-      <entry key="S2" value="1.2057087004720522E-99" />
-      <entry key="S5" value="2.7070556170849905E-40" />
-      <entry key="S10" value="1.6468317782208513E-20" />
-      <entry key="S30" value="2.9274826466701904E-7" />
-      <entry key="S60" value="7.815785579458964E-4" />
-      <entry key="M2" value="0.04832360890492904" />
-      <entry key="M5" value="0.8877535203120213" />
-      <entry key="M10" value="3.1863008531851715" />
-      <entry key="M15" value="5.307090614956995" />
-      <entry key="M30" value="10.347015299260779" />
-      <entry key="H1" value="17.56261685404422" />
-      <entry key="H2" value="28.059003341304127" />
-      <entry key="H4" value="48.22785302255197" />
-      <entry key="D1" value="122.02532416487264" />
-      <entry key="W1" value="152.0341902088441" />
+      <entry key="MS500" value="4.70770879676953E-174" />
+      <entry key="S2" value="7.385813492301788E-44" />
+      <entry key="S5" value="8.430780979727156E-18" />
+      <entry key="S10" value="4.167299215270712E-9" />
+      <entry key="S30" value="0.002944141968567453" />
+      <entry key="S60" value="0.09137049586059608" />
+      <entry key="M2" value="0.5193106917001373" />
+      <entry key="M5" value="1.48435426935617" />
+      <entry key="M10" value="2.109535390970809" />
+      <entry key="M15" value="2.3752330888271374" />
+      <entry key="M30" value="2.926514621702556" />
+      <entry key="H1" value="6.16365301648181" />
+      <entry key="H2" value="17.86689686580357" />
+      <entry key="H4" value="42.516155213863115" />
+      <entry key="D1" value="142.880769275771" />
+      <entry key="W1" value="190.18955394089923" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.08656934175693277" />
-      <entry key="MS500" value="0.6130174300265782" />
-      <entry key="S2" value="0.8848470468146135" />
-      <entry key="S5" value="0.952241889412658" />
-      <entry key="S10" value="0.9758288217780093" />
-      <entry key="S30" value="0.9918800051788385" />
-      <entry key="S60" value="1.0020960183402832" />
-      <entry key="M2" value="1.3116671424557524" />
-      <entry key="M5" value="5.643358996376752" />
-      <entry key="M10" value="16.975300646535448" />
-      <entry key="M15" value="28.372854214702553" />
-      <entry key="M30" value="65.0897122920854" />
-      <entry key="H1" value="140.50151149565193" />
-      <entry key="H2" value="261.202237991419" />
-      <entry key="H4" value="472.1699138231267" />
-      <entry key="D1" value="1241.4670381696283" />
-      <entry key="W1" value="1568.9097888679794" />
+      <entry key="MS100" value="0.00567230148555996" />
+      <entry key="MS500" value="0.5957035499479343" />
+      <entry key="S2" value="2.223198343460471" />
+      <entry key="S5" value="3.1631304440095573" />
+      <entry key="S10" value="4.025967002743873" />
+      <entry key="S30" value="6.757218298806722" />
+      <entry key="S60" value="9.153461535559519" />
+      <entry key="M2" value="13.725138379268728" />
+      <entry key="M5" value="25.244147948010564" />
+      <entry key="M10" value="38.74737468689383" />
+      <entry key="M15" value="47.25870825664436" />
+      <entry key="M30" value="64.1783182336691" />
+      <entry key="H1" value="106.99300594057837" />
+      <entry key="H2" value="231.1431151323618" />
+      <entry key="H4" value="486.04036674175643" />
+      <entry key="D1" value="1528.1067731372625" />
+      <entry key="W1" value="2034.6765765110893" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -116,31 +114,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "FastAPI.AUTH.executor": "Debug",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python.auth_routes.executor": "Run",
-    "Python.user_dto.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "main",
-    "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "E:/thuyht/5.Ok2Ship2.0/5.Identity-service_API",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "to.speed.mode.migration.done": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;FastAPI.AUTH.executor&quot;: &quot;Debug&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.auth_routes.executor&quot;: &quot;Run&quot;,
+    &quot;Python.user_dto.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/thuyht/5.Ok2Ship2.0/5.Identity-service_API&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;ml.llm.LLMThirdPartyAiProvidersConfigurable&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\thuyht\5.Ok2Ship2.0\5.Identity-service_API\infrastructures\database" />
@@ -191,7 +191,9 @@
       <workItem from="1780976540611" duration="3297000" />
       <workItem from="1781064670537" duration="2991000" />
       <workItem from="1781073955571" duration="11172000" />
-      <workItem from="1781143817962" duration="21136000" />
+      <workItem from="1781143817962" duration="21483000" />
+      <workItem from="1781228966817" duration="17940000" />
+      <workItem from="1781598233455" duration="585000" />
     </task>
     <servers />
   </component>
@@ -213,9 +215,29 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/api/dependencies/auth_deps.py</url>
-          <line>23</line>
-          <option name="timeStamp" value="29" />
+          <url>file://$PROJECT_DIR$/services/auth_service.py</url>
+          <line>135</line>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/api/routes/v1/auth_routes.py</url>
+          <line>36</line>
+          <option name="timeStamp" value="49" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/infrastructures/database/repositories/user_repository.py</url>
+          <line>31</line>
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/services/auth_service.py</url>
+          <line>65</line>
+          <option name="timeStamp" value="56" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/api/routes/v1/auth_routes.py</url>
+          <line>51</line>
+          <option name="timeStamp" value="57" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -227,7 +249,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/5_Identity_service_API$user_dto.coverage" NAME="user_dto Coverage Results" MODIFIED="1780478701142" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/domain/schemas" />
-    <SUITE FILE_PATH="coverage/5_Identity_service_API$AUTH.coverage" NAME="AUTH Coverage Results" MODIFIED="1781172863060" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/5_Identity_service_API$AUTH.coverage" NAME="AUTH Coverage Results" MODIFIED="1781249032327" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/5_Identity_service_API$auth_routes.coverage" NAME="auth_routes Coverage Results" MODIFIED="1780478814186" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/api/routes/v1" />
   </component>
 </project>

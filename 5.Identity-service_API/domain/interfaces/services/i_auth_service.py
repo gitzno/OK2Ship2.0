@@ -1,4 +1,5 @@
 from abc import ABC, abstractmethod
+from uuid import UUID
 
 from domain.models.generated_models import Users
 from domain.schemas.service_result import ServiceResult
@@ -6,6 +7,9 @@ from domain.schemas.user_dto import LoginRequest, RegisterRequest
 
 
 class IAuthService(ABC):
+    @abstractmethod
+    async def logout(self, userId : UUID) -> ServiceResult[bool]:
+        pass
 
     @abstractmethod
     async def login(self, request: LoginRequest) -> ServiceResult[str]:

@@ -1,3 +1,5 @@
+from typing import ClassVar
+
 from pydantic import computed_field
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
@@ -11,6 +13,9 @@ class Settings(BaseSettings):
     DB_PORT: int = 1433
     DB_NAME: str
     DB_DRIVER: str = "ODBC Driver 17 for SQL Server"
+
+    KEY_CACHE_AUTH_USER: ClassVar[str] = "user_{user_ID}"
+
 
     @computed_field
     @property

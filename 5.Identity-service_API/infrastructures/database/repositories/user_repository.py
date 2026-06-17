@@ -1,7 +1,8 @@
 from typing import Optional
 from uuid import UUID
 
-from sqlalchemy import delete, insert
+from fastapi.params import Security
+from sqlalchemy import delete, insert, update
 from sqlalchemy.future import select
 from sqlalchemy.ext.asyncio import AsyncSession, result
 from sqlalchemy.orm import class_mapper
@@ -16,10 +17,19 @@ from domain.schemas.exceptions import DuplicateAccountError
 
 class UserRepository(IUserRepository):
 
-
-
     def __init__(self, session: AsyncSession):
         self.session = session
+
+    async def update_stamp(self, user_id: UUID, stamp: UUID) -> bool:
+        query = (
+            update(Users)
+            .where(Users.UserID == user_id)
+            .values(SecurityStamp=stamp)
+        )
+
+        result = await self.session.execute(query)
+
+        return result.rowcount == 1
 
     async def get_by_id(self, user_id: UUID) -> Optional[Users]:
         stmt = select(Users).where(Users.UserID == user_id)
@@ -56,5 +66,3 @@ class UserRepository(IUserRepository):
         result = await self.session.execute(stmt)
 
         return result.scalars().first()
-
-
