@@ -1,4 +1,4 @@
-# Hệ thống phần mềm OK2SHIP_BACKEND
+# Hệ thống phần mềm OK2SHIP
 
 ## Requirement
 
