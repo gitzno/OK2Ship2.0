@@ -13,21 +13,21 @@ type ExcelEvent struct {
 	FilePath string `json:"file_path"`
 	ItemCode string `json:"item_code"`
 	LotNo    string `json:"lot_no"`
-	Category string `json:"type"`
+	Category string `json:"type"` // Lưu ý: JSON key là "type"
 }
 
 type Consumer struct {
-	handlers map[string]domain.LogImporterUseCase
+	// Dùng registry để lưu danh sách các Use Case
+	useCases map[string]domain.MainUseCase
 }
 
-func NewConsumer() *Consumer {
+// Khởi tạo Consumer với một danh sách các Use Case
+func NewConsumer(uc domain.MainUseCase) *Consumer {
 	return &Consumer{
-		handlers: make(map[string]domain.LogImporterUseCase),
+		useCases: map[string]domain.MainUseCase{
+			"peel_test": uc, // Map cứng hoặc dùng Registry injection
+		},
 	}
-}
-
-func (c *Consumer) RegisterHandler(category string, uc domain.LogImporterUseCase) {
-	c.handlers[category] = uc
 }
 
 func (c *Consumer) Start(messages <-chan amqp.Delivery) {
@@ -41,19 +41,19 @@ func (c *Consumer) Start(messages <-chan amqp.Delivery) {
 			continue
 		}
 
-		// 1. ROUTING: Tìm Use Case xử lý tương ứng với Category
-		handler, exists := c.handlers[event.Category]
+		// 1. ROUTING: Tìm Use Case trong map
+		handler, exists := c.useCases[event.Category]
 		if !exists {
 			log.Printf("[CẢNH BÁO] Không tìm thấy Use Case cho category: %s", event.Category)
-			// Đẩy vào Dead Letter Queue vì không biết xử lý sao
 			msg.Nack(false, false)
 			continue
 		}
 
-		// 2. THỰC THI: Gọi Use Case tương ứng
+		// 2. THỰC THI: Gọi phương thức ImportLogFile với đầy đủ tham số
 		ctx := context.Background()
-		log.Printf("=> Đang điều phối category [%s] tới đúng handler...", event.Category)
-		err := handler.ImportLogFile(ctx, event.FilePath)
+		log.Printf("=> Đang điều phối category [%s]...", event.Category)
+
+		err := handler.ImportLogFile(ctx, event.FilePath, event.ItemCode, event.LotNo)
 
 		// 3. KẾT QUẢ
 		if err != nil {

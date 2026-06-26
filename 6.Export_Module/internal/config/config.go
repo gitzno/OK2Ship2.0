@@ -33,10 +33,10 @@ func LoadConfig() *AppConfig {
 	if *envPath != "" {
 		err := godotenv.Load(*envPath)
 		if err == nil {
-			log.Printf("✅ Đã load cấu hình thủ công từ: %s", *envPath)
+			log.Printf("Đã load cấu hình thủ công từ: %s", *envPath)
 			loaded = true
 		} else {
-			log.Printf("❌ Không thể nạp file từ %s. Lỗi: %v", *envPath, err)
+			log.Printf("Không thể nạp file từ %s. Lỗi: %v", *envPath, err)
 		}
 	}
 
@@ -52,7 +52,7 @@ func LoadConfig() *AppConfig {
 		for _, p := range pathsToTry {
 			err := godotenv.Load(p)
 			if err == nil {
-				log.Printf("✅ Tự động tìm thấy và load cấu hình tại: %s", p)
+				log.Printf("Tự động tìm thấy và load cấu hình tại: %s", p)
 				loaded = true
 				break // Tìm thấy cái đầu tiên là dừng lặp ngay lập tức
 			}
@@ -63,13 +63,20 @@ func LoadConfig() *AppConfig {
 	if !loaded {
 		log.Println("⚠️ Không tìm thấy file .env cục bộ. Hệ thống sẽ sử dụng biến môi trường của Hệ điều hành (OS/Docker ENV).")
 	}
+
+	portSql := getEnv("DB_PORT", "1433")
+	passSql := getEnv("MSSQL_PASSWORD", "1433")
+	userSQL := "sa"
+	dbName := "OK2SHIP_SMT"
+	dsn := fmt.Sprintf("sqlserver://%s:%s@%s:%s?database=%s",
+		userSQL, passSql, "", portSql, dbName)
 	port := getEnv("RABBITMQ_PORT", "5672")
 	user := getEnv("RABBITMQ_DEFAULT_USER", "guest")
 	pass := getEnv("RABBITMQ_DEFAULT_PASS", "guest")
 	rabbitMQ_url := fmt.Sprintf("amqp://%v:%v@localhost:%v/", user, pass, port)
 
 	port = getEnv("MINIO_HOT_API_PORT", "9000")
-	minIO_url := fmt.Sprintf("http://localhost:%v/", port)
+	minIO_url := fmt.Sprintf("localhost:%v", port)
 
 	// 5. Gom dữ liệu vào Struct
 	return &AppConfig{
@@ -79,7 +86,7 @@ func LoadConfig() *AppConfig {
 		MinioEndpoint:  minIO_url,
 		MinioAccessKey: getEnv("MINIO_ROOT_USER_HOT", "admin_hot_default"),
 		MinioSecretKey: getEnv("MINIO_ROOT_PASSWORD_HOT", "password123_hot_default"),
-		SQLServerConn:  getEnv("SQL_SERVER_CONN", ""),
+		SQLServerConn:  dsn,
 	}
 }
 func getURLMQ(port string, account string, password string) {
